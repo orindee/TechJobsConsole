@@ -57,6 +57,8 @@ namespace TechJobsConsole
                     // What is their search term?
                     Console.WriteLine("\nSearch term: ");
                     string searchTerm = Console.ReadLine();
+                    //do the case insensitive thing here
+                    //put FindByValue here
 
                     List<Dictionary<string, string>> searchResults;
 
@@ -118,6 +120,8 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            //write printjobs here
+            //Console.ReadLine
             Console.WriteLine("PrintJobs is not implemented yet");
         }
     }
