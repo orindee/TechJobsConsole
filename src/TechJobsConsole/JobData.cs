@@ -15,7 +15,6 @@ namespace TechJobsConsole
             LoadData();
             return AllJobs;
         }
-
         /*
          * Returns a list of all values contained in a given column,
          * without duplicates. 
@@ -137,6 +136,27 @@ namespace TechJobsConsole
             valueBuilder.Clear();
 
             return rowValues.ToArray();
+        }
+        public static List<Dictionary<string, string>> FindByValue(string value)
+        {
+            LoadData();
+
+            List<Dictionary<string, string>> returnedJobs = new List<Dictionary<string, string>>();
+
+            foreach (Dictionary<string, string> job in AllJobs)
+            {
+                foreach (KeyValuePair<string, string> column in job)
+                {
+                    if (column.Value.ToLower().Contains(value.ToLower()))
+                    {
+                        if (!(returnedJobs.Contains(job)))
+                        {
+                            returnedJobs.Add(job);
+                        }
+                    }
+                }
+            }
+            return returnedJobs;
         }
     }
 }
