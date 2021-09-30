@@ -57,8 +57,6 @@ namespace TechJobsConsole
                     // What is their search term?
                     Console.WriteLine("\nSearch term: ");
                     string searchTerm = Console.ReadLine();
-                    //do the case insensitive thing here
-                    //put FindByValue here
 
                     List<Dictionary<string, string>> searchResults;
 
@@ -120,10 +118,14 @@ namespace TechJobsConsole
 
         public static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            for (int i = 0; i == someJobs.Count; i++)
+            {
+                Console.WriteLine("No jobs available.");
+            }
             foreach (Dictionary<string, string> job in someJobs)
             {
                 Console.WriteLine("*****");
-                foreach (KeyValuePair<string,string> kvp in job)
+                foreach (KeyValuePair<string, string> kvp in job)
                 {
                     Console.WriteLine(kvp.Key + ": " + kvp.Value);
                 }
@@ -132,3 +134,4 @@ namespace TechJobsConsole
         }
     }
 }
+    
